@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
     # Prepare dataset
     corpus = path.splitext(path.basename(features_path))[0]
-    if corpus == "masseffect":
+    if "masseffect" in corpus:
         train = IvectorMassEffect(lst_path, features_path, dims=input_dim)
         dev = IvectorMassEffect(test_lst_path, features_path, dims=input_dim)
     else:

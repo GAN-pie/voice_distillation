@@ -33,11 +33,11 @@ if __name__ == "__main__":
 
     corpus = path.splitext(path.basename(features_path))[0]
     scaler_path = path.join(mdl_dir, "data_scaler.pkl")
-    if corpus == "masseffect":
+    if "masseffect" in corpus:
         data = IvectorMassEffect(lst_path, features_path, dims=input_dim, scaler=scaler_path)
-    elif corpus == "skyrim":
+    elif "skyrim" in corpus:
         data = IvectorSkyrim(lst_path, features_path, dims=input_dim, scaler=scaler_path)
-    elif corpus == "voxceleb":
+    elif "voxceleb" in corpus:
         data = IvectorVoxceleb(lst_path, features_path, dims=input_dim, scaler=scaler_path)
     X = data.X
     Y = data.Y

@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     # Dataset preparation
     corpus = path.splitext(path.basename(features_path))[0]
-    if corpus == "skyrim":
+    if "skyrim" in corpus:
         soft_data = IvectorSoftTargetSkyrim(lst_path, features_path, soft_target_path, dims=input_dim)
         soft_data_dev = IvectorSoftTargetSkyrim(test_lst_path, features_path, soft_target_path, dims=input_dim)
     else:
